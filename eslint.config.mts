@@ -5,15 +5,16 @@ import pluginReact from "eslint-plugin-react";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
-  { files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"], plugins: { js }, extends: ["js/recommended"], languageOptions: { globals: globals.node } },
-  tseslint.configs.recommended,
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   //rules ここから
   {
     rules: {
       "react/react-in-jsx-scope": 0,
       "semi": [2, "never"],
-      "comma-dangle": [2, "never"]
+      "comma-dangle": [2, "never"],
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }]
     }
   }
   //rules ここまで
