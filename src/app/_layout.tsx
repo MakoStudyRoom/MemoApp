@@ -8,6 +8,7 @@ const Layout = (): React.JSX.Element => {
         headerTintColor:'#ffffff',
         headerTitle: 'Memo App',
         headerBackTitle: 'Back',
+        headerTitleAlign: 'center',
         headerTitleStyle:{
             fontSize: 22,
             fontWeight: 'bold'
