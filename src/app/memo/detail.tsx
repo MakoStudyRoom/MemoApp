@@ -1,13 +1,20 @@
 import {View, Text,ScrollView, StyleSheet} from 'react-native'
-import { Feather }from '@expo/vector-icons'
+//import { Feather }from '@expo/vector-icons'
 import Icon from '../../components/Icon'
 
-import Header from '../../components/Header'
+import {router} from 'expo-router'
+
 import CircleButton from '../../components/CircleButton'
+
+const handlePress = ():void => {
+    // メモ編集画面へ遷移
+    router.push('/memo/edit')
+}
+
+
 const Detail = (): React.JSX.Element => {
     return(
         <View style={styles.container}>
-            <Header/>
             <View style={styles.memoHeader}>
                 <Text style={styles.memoTitle}>買い物リスト</Text>
                 <Text style={styles.memoDate}>2025年1月1日</Text>
@@ -21,7 +28,7 @@ const Detail = (): React.JSX.Element => {
                     </Text>
                 </View>
             </ScrollView>
-            <CircleButton style={{top : 160 , bottom: 'auto'}}>
+            <CircleButton onPress={handlePress} style={{top : 60 , bottom: 'auto'}}>
                 {/* <Feather name="check" size={40}/> */}
                 <Icon name="pencil" size={40} color="white"/>
             </CircleButton>
